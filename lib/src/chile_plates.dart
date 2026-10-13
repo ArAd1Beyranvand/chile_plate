@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/widgets.dart' show EdgeInsets;
 import 'package:plate_alphabet/plate_alphabet.dart';
 import 'package:plate_core/plate_core.dart';
@@ -263,19 +265,18 @@ abstract final class ChilePlates {
     final List<PlateSlot> slots = <PlateSlot>[];
     final List<PlateTextGroup> groups = <PlateTextGroup>[];
     for (final _Run r in d.runs) {
-      groups.add(
-        PlateTextGroup(<int>[
-          for (int i = 0; i < r.count; i++) slots.length + i,
-        ], key: r.key),
-      );
-      slots.addAll(
-        plateRegister(
+      groups.add(PlateTextGroup(<int>[slots.length], key: r.key));
+      slots.add(
+        PlateSlot(
           alphabet: r.alphabet,
-          count: r.count,
-          left: r.cx - r.count * r.pitch / 2,
-          top: d.rowTop,
-          width: r.pitch,
-          height: d.rowHeight,
+          box: PlateBox(
+            r.cx - r.count * r.pitch / 2,
+            d.rowTop,
+            r.count * r.pitch,
+            d.rowHeight,
+          ),
+          length: r.count,
+          spacing: max(0, r.pitch - 0.6 * 0.72 * d.rowHeight),
         ),
       );
     }

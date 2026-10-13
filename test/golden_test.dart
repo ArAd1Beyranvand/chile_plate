@@ -26,32 +26,32 @@ void main() {
   /// category id -> (spec, theme, space-separated sample value)
   final Map<String, (PlateSpec, PlateTheme, String)> cases =
       <String, (PlateSpec, PlateTheme, String)>{
-        'private': (ChilePlates.private, ChileThemes.private, 'B B B B 1 0'),
-    'taxi': (ChilePlates.taxi, ChileThemes.taxi, 'B P C W 1 7'),
+        'private': (ChilePlates.private, ChileThemes.private, 'BB BB 10'),
+    'taxi': (ChilePlates.taxi, ChileThemes.taxi, 'BP CW 17'),
     'collective_taxi': (
       ChilePlates.collectiveTaxi,
       ChileThemes.collectiveTaxi,
-      'C D J L 7 0',
+      'CD JL 70',
     ),
-    'radiotaxi': (ChilePlates.radiotaxi, ChileThemes.radiotaxi, 'C T Y S 6 1'),
-    'free_zone': (ChilePlates.freeZone, ChileThemes.freeZone, 'D Z G F 4 5'),
-    'bus': (ChilePlates.bus, ChileThemes.bus, 'D H R J 5 2'),
-    'trailer': (ChilePlates.trailer, ChileThemes.trailer, 'J D 2 0 6 7'),
+    'radiotaxi': (ChilePlates.radiotaxi, ChileThemes.radiotaxi, 'CT YS 61'),
+    'free_zone': (ChilePlates.freeZone, ChileThemes.freeZone, 'DZ GF 45'),
+    'bus': (ChilePlates.bus, ChileThemes.bus, 'DH RJ 52'),
+    'trailer': (ChilePlates.trailer, ChileThemes.trailer, 'JD 20 67'),
     'light_trailer': (
       ChilePlates.lightTrailer,
       ChileThemes.lightTrailer,
-      'B K F 1 2 5',
+      'BKF 125',
     ),
     'diplomatic': (
       ChilePlates.diplomatic,
       ChileThemes.diplomatic,
-      'C D 2 4 0 1',
+      'CD 24 01',
     ),
-    'police': (ChilePlates.police, ChileThemes.police, 'R P 2 5 6 0'),
+    'police': (ChilePlates.police, ChileThemes.police, 'RP 2560'),
     'provisional': (
       ChilePlates.provisional,
       ChileThemes.provisional,
-      'P R 0 4 5',
+      'PR 045',
     ),
   };
 
