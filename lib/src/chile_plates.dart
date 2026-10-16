@@ -7,8 +7,6 @@ import 'package:plate_core/plate_core.dart';
 import 'chile_country.dart';
 import 'chile_missions.dart';
 
-/// One group of evenly pitched cells: [count] cells of the [alphabet] centred
-/// on [cx] at [pitch].
 class _Run {
   const _Run(this.key, this.alphabet, this.count, this.cx, this.pitch);
 
@@ -18,7 +16,6 @@ class _Run {
   final double cx, pitch;
 }
 
-/// A fixed word or sign centred on ([cx], [cy]) in a box [width] wide.
 class _Mark {
   const _Mark(this.text, this.cx, this.cy, this.width, this.glyph);
 
@@ -26,15 +23,14 @@ class _Mark {
   final double cx, cy, width, glyph;
 }
 
-/// A separator drawn as a short rule: a dot or the shield block.
 class _Sep {
   const _Sep(this.cx, this.cy, this.width, this.height);
 
   final double cx, cy, width, height;
 }
 
-/// What one design shares: the cells, the separators and the fixed text.
-/// Colours are not here; they live on `ChileThemes`.
+/// What one design shares: cells, separators and fixed text. Colour lives on
+/// `ChileThemes`.
 class _Design {
   const _Design({
     required this.id,
@@ -224,8 +220,6 @@ abstract final class _Layout {
 abstract final class ChilePlates {
   static final PlateSpec private = _spec(_Layout.twoPair);
 
-  /// Taxi, radiotaxi and free-zone plates share [private]'s layout; only the
-  /// theme differs.
   static final PlateSpec taxi = _spec(_Layout.twoPair, id: 'cl.taxi');
   static final PlateSpec collectiveTaxi = _spec(
     _Layout.twoPair,
@@ -243,7 +237,6 @@ abstract final class ChilePlates {
   static final PlateSpec police = _spec(_Layout.police);
   static final PlateSpec provisional = _spec(_Layout.provisional);
 
-  /// The light trailer plate with its own region captioned above the number.
   static PlateSpec lightTrailerFor(String region) =>
       _spec(_Layout.lightTrailer(region));
 
