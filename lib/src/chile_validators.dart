@@ -20,19 +20,13 @@ class ChileValidator extends GatedPlateValidator {
   @override
   String get gateGroup => 'number';
 
-  static const String reasonLetters =
-      'The letters are consonants (no M, N, Ñ or Q).';
+  static const String reasonLetters = 'The letters are consonants (no M, N, Ñ or Q).';
   static const String reasonNumber = 'The number is two digits.';
-  static const String reasonDiplomatic =
-      'A diplomatic plate starts CD, CC, AT, CH, OI or PAT.';
-  static const String reasonTrailer =
-      'A trailer plate is two letters and two pairs of digits.';
-  static const String reasonLight =
-      'A light trailer is three consonants and three digits.';
-  static const String reasonProvisional =
-      'A provisional plate is PR and three or four digits.';
-  static const String reasonPolice =
-      'A police plate is letters and four digits.';
+  static const String reasonDiplomatic = 'A diplomatic plate starts CD, CC, AT, CH, OI or PAT.';
+  static const String reasonTrailer = 'A trailer plate is two letters and two pairs of digits.';
+  static const String reasonLight = 'A light trailer is three consonants and three digits.';
+  static const String reasonProvisional = 'A provisional plate is PR and three or four digits.';
+  static const String reasonPolice = 'A police plate is letters and four digits.';
 
   static final RegExp _consonants = RegExp(r'^[BCDFGHJKLPRSTVWXYZ]+$');
   static final RegExp _letters = RegExp(r'^[A-Z]+$');

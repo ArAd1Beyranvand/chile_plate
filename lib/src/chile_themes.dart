@@ -11,37 +11,16 @@ import 'chile_colors.dart';
 /// The trailer plate is the private plate's colours and the provisional plate
 /// the taxi's, so each is an alias.
 abstract final class ChileThemes {
-  static final PlateTheme private = _framed(
-    ChileColors.white,
-    ChileColors.black,
-  );
+  static final PlateTheme private = _framed(ChileColors.white, ChileColors.black);
   static final PlateTheme taxi = _framed(ChileColors.orange, ChileColors.black);
-  static final PlateTheme collectiveTaxi = _framed(
-    ChileColors.yellow,
-    ChileColors.black,
-  );
-  static final PlateTheme radiotaxi = _framed(
-    ChileColors.orange,
-    ChileColors.white,
-  );
+  static final PlateTheme collectiveTaxi = _framed(ChileColors.yellow, ChileColors.black);
+  static final PlateTheme radiotaxi = _framed(ChileColors.orange, ChileColors.white);
   static final PlateTheme bus = _framed(ChileColors.white, ChileColors.green);
-  static final PlateTheme freeZone = _framed(
-    ChileColors.red,
-    ChileColors.white,
-  );
+  static final PlateTheme freeZone = _framed(ChileColors.red, ChileColors.white);
   static final PlateTheme trailer = private;
-  static final PlateTheme lightTrailer = _framed(
-    ChileColors.white,
-    ChileColors.trailerRed,
-  );
-  static final PlateTheme diplomatic = _framed(
-    ChileColors.blue,
-    ChileColors.white,
-  );
-  static final PlateTheme police = _framed(
-    ChileColors.black,
-    ChileColors.white,
-  );
+  static final PlateTheme lightTrailer = _framed(ChileColors.white, ChileColors.trailerRed);
+  static final PlateTheme diplomatic = _framed(ChileColors.blue, ChileColors.white);
+  static final PlateTheme police = _framed(ChileColors.black, ChileColors.white);
   static final PlateTheme provisional = taxi;
 }
 

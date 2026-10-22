@@ -10,3 +10,4 @@ export 'src/chile_plates.dart';
 export 'src/chile_themes.dart';
 export 'src/chile_validators.dart';
 export 'package:plate_alphabet/plate_alphabet.dart' show ChileAlphabets;
+export 'src/easter_island/easter_island_plate.dart';

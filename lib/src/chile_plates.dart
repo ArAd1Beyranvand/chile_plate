@@ -100,34 +100,10 @@ abstract final class _Layout {
 
   static const _Mark chile = _Mark('C H I L E', 178.5, 109.1, 140, 31);
 
-  static const _Run first = _Run(
-    'first',
-    ChileAlphabets.letters,
-    2,
-    60.5,
-    47.2,
-  );
-  static const _Run secondLetters = _Run(
-    'second',
-    ChileAlphabets.letters,
-    2,
-    181.2,
-    47.1,
-  );
-  static const _Run secondDigits = _Run(
-    'second',
-    PlateAlphabet.latinDigits,
-    2,
-    181.2,
-    47.1,
-  );
-  static const _Run number = _Run(
-    'number',
-    PlateAlphabet.latinDigits,
-    2,
-    303.5,
-    47.2,
-  );
+  static const _Run first = _Run('first', ChileAlphabets.letters, 2, 60.5, 47.2);
+  static const _Run secondLetters = _Run('second', ChileAlphabets.letters, 2, 181.2, 47.1);
+  static const _Run secondDigits = _Run('second', PlateAlphabet.latinDigits, 2, 181.2, 47.1);
+  static const _Run number = _Run('number', PlateAlphabet.latinDigits, 2, 303.5, 47.2);
 
   static const _Sep dot = _Sep(119, 46, 9, 9);
   static const _Sep shield = _Sep(243.3, 46, 19.8, 19.8);
@@ -150,11 +126,7 @@ abstract final class _Layout {
 
   static const _Design trailer = _Design(
     id: 'cl.trailer',
-    runs: <_Run>[
-      _Run('first', ChileAlphabets.anyLetters, 2, 60.5, 47.2),
-      secondDigits,
-      number,
-    ],
+    runs: <_Run>[_Run('first', ChileAlphabets.anyLetters, 2, 60.5, 47.2), secondDigits, number],
     marks: <_Mark>[chile],
     seps: <_Sep>[trailerShield, trailerDot],
   );
@@ -165,10 +137,7 @@ abstract final class _Layout {
       _Run('first', ChileAlphabets.letters, 3, 86.9, 49.6),
       _Run('number', PlateAlphabet.latinDigits, 3, 278, 46.5),
     ],
-    marks: <_Mark>[
-      _Mark(region, 181, 20.9, 230, 31),
-      const _Mark(r'$', 182.5, 82, 30, 60),
-    ],
+    marks: <_Mark>[_Mark(region, 181, 20.9, 230, 31), const _Mark(r'$', 182.5, 82, 30, 60)],
     rowTop: 35,
     rowHeight: 94,
   );
@@ -204,10 +173,7 @@ abstract final class _Layout {
       _Run('first', ChileAlphabets.anyLetters, 2, 65.8, 47.2),
       _Run('number', PlateAlphabet.latinDigits, 3, 272, 46),
     ],
-    marks: <_Mark>[
-      _Mark('PROVISORIA 2014', 180, 107.9, 270, 34),
-      _Mark('★', 158.8, 46.6, 30, 26),
-    ],
+    marks: <_Mark>[_Mark('PROVISORIA 2014', 180, 107.9, 270, 34), _Mark('★', 158.8, 46.6, 30, 26)],
   );
 }
 
@@ -221,14 +187,8 @@ abstract final class ChilePlates {
   static final PlateSpec private = _spec(_Layout.twoPair);
 
   static final PlateSpec taxi = _spec(_Layout.twoPair, id: 'cl.taxi');
-  static final PlateSpec collectiveTaxi = _spec(
-    _Layout.twoPair,
-    id: 'cl.taxi.collective',
-  );
-  static final PlateSpec radiotaxi = _spec(
-    _Layout.twoPair,
-    id: 'cl.taxi.radio',
-  );
+  static final PlateSpec collectiveTaxi = _spec(_Layout.twoPair, id: 'cl.taxi.collective');
+  static final PlateSpec radiotaxi = _spec(_Layout.twoPair, id: 'cl.taxi.radio');
   static final PlateSpec freeZone = _spec(_Layout.twoPair, id: 'cl.freezone');
   static final PlateSpec bus = _spec(_Layout.bus);
   static final PlateSpec trailer = _spec(_Layout.trailer);
@@ -237,8 +197,7 @@ abstract final class ChilePlates {
   static final PlateSpec police = _spec(_Layout.police);
   static final PlateSpec provisional = _spec(_Layout.provisional);
 
-  static PlateSpec lightTrailerFor(String region) =>
-      _spec(_Layout.lightTrailer(region));
+  static PlateSpec lightTrailerFor(String region) => _spec(_Layout.lightTrailer(region));
 
   static List<PlateSpec> get all => <PlateSpec>[
     private,
@@ -262,12 +221,7 @@ abstract final class ChilePlates {
       slots.add(
         PlateSlot(
           alphabet: r.alphabet,
-          box: PlateBox(
-            r.cx - r.count * r.pitch / 2,
-            d.rowTop,
-            r.count * r.pitch,
-            d.rowHeight,
-          ),
+          box: PlateBox(r.cx - r.count * r.pitch / 2, d.rowTop, r.count * r.pitch, d.rowHeight),
           length: r.count,
           spacing: max(0, r.pitch - 0.6 * 0.72 * d.rowHeight),
         ),
@@ -278,20 +232,10 @@ abstract final class ChilePlates {
       country: ChileCountry.chile,
       canvasWidth: _Layout.width,
       canvasHeight: _Layout.height,
-      panel: const PlatePanel(
-        box: PlateBox(0, 0, 0, _Layout.height),
-        padding: EdgeInsets.zero,
-      ),
+      panel: const PlatePanel(box: PlateBox(0, 0, 0, _Layout.height), padding: EdgeInsets.zero),
       rules: <PlateRule>[
         for (final _Sep s in d.seps)
-          PlateRule(
-            box: PlateBox(
-              s.cx - s.width / 2,
-              s.cy - s.height / 2,
-              s.width,
-              s.height,
-            ),
-          ),
+          PlateRule(box: PlateBox(s.cx - s.width / 2, s.cy - s.height / 2, s.width, s.height)),
       ],
       slots: slots,
       labels: <PlateLabel>[
