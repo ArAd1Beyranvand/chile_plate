@@ -1,7 +1,7 @@
 name: chile_plate
 description: "Chile's licence plates for the plate_core library — the black-on-white private plate and the orange provisional plate, with themes, alphabets and an advisory validator."
 version: 0.1.0
-publish_to: none
+repository: https://github.com/ArAd1Beyranvand/chile_plate
 resolution: workspace
 
 environment:
