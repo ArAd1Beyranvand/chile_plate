@@ -42,7 +42,10 @@ abstract final class _Layout {
 /// Provincial captions were dropped in 1984; these are the older plates the
 /// article pictures.
 abstract final class EasterIslandPlates {
-  static final PlateSpec easterIsland = _spec('ea.easter_island', 'I. DE PASCUA');
+  static final PlateSpec easterIsland = _spec(
+    'ea.easter_island',
+    'I. DE PASCUA',
+  );
   static final PlateSpec juanFernandez = _spec(
     'ea.juan_fernandez',
     'J. FERNANDEZ',
@@ -52,16 +55,32 @@ abstract final class EasterIslandPlates {
 
   static List<PlateSpec> get all => <PlateSpec>[easterIsland, juanFernandez];
 
-  static PlateSpec _spec(String id, String caption, {double captionCx = 254.1, String? district}) {
+  static PlateSpec _spec(
+    String id,
+    String caption, {
+    double captionCx = 254.1,
+    String? district,
+  }) {
     return PlateSpec(
       id: id,
       country: EasterIslandCountry.easter_island,
       canvasWidth: _Layout.width,
       canvasHeight: _Layout.height,
-      panel: const PlatePanel(box: PlateBox(0, 0, 0, _Layout.height), padding: EdgeInsets.zero),
+      panel: const PlatePanel(
+        box: PlateBox(0, 0, 0, _Layout.height),
+        padding: EdgeInsets.zero,
+      ),
       slots: <PlateSlot>[
-        PlateSlot(alphabet: EasterIslandAlphabets.letters, box: _Layout.letters, length: 3),
-        PlateSlot(alphabet: EasterIslandAlphabets.digits, box: _Layout.digits, length: 3),
+        PlateSlot(
+          alphabet: EasterIslandAlphabets.letters,
+          box: _Layout.letters,
+          length: 3,
+        ),
+        PlateSlot(
+          alphabet: EasterIslandAlphabets.digits,
+          box: _Layout.digits,
+          length: 3,
+        ),
       ],
       labels: <PlateLabel>[
         PlateLabel(
@@ -75,7 +94,11 @@ abstract final class EasterIslandPlates {
             box: const PlateBox(443, _Layout.captionCy - 14, 40, 28),
             glyphHeight: _Layout.captionGlyph,
           ),
-        const PlateLabel(text: r'$', box: PlateBox(243, 126, 60, 60), glyphHeight: _Layout.mark),
+        const PlateLabel(
+          text: r'$',
+          box: PlateBox(243, 126, 60, 60),
+          glyphHeight: _Layout.mark,
+        ),
       ],
       textGroups: const <PlateTextGroup>[
         PlateTextGroup(<int>[0], key: 'letters'),

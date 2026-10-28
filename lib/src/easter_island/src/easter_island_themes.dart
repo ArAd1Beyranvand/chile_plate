@@ -6,7 +6,10 @@ import 'easter_island_colors.dart';
 /// One ink on one field. The frame width and corner radius are estimated from
 /// the references (a thin embossed edge), not measured.
 abstract final class EasterIslandThemes {
-  static final PlateTheme easterIsland = _framed(EasterIslandColors.grey, EasterIslandColors.red);
+  static final PlateTheme easterIsland = _framed(
+    EasterIslandColors.grey,
+    EasterIslandColors.red,
+  );
   static final PlateTheme juanFernandez = _framed(
     EasterIslandColors.orange,
     EasterIslandColors.blue,

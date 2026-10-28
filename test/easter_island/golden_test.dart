@@ -39,10 +39,14 @@ void main() {
         ),
       };
 
-  for (final MapEntry<String, (PlateSpec, PlateTheme, String)> c in cases.entries) {
+  for (final MapEntry<String, (PlateSpec, PlateTheme, String)> c
+      in cases.entries) {
     testWidgets(c.key, (tester) async {
       final (PlateSpec spec, PlateTheme theme, String values) = c.value;
-      final PlateController controller = PlateController.fromValues(spec, values.split(' '));
+      final PlateController controller = PlateController.fromValues(
+        spec,
+        values.split(' '),
+      );
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
@@ -64,7 +68,10 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      await expectLater(find.byType(PlateView), matchesGoldenFile('goldens/ea_${c.key}.png'));
+      await expectLater(
+        find.byType(PlateView),
+        matchesGoldenFile('goldens/ea_${c.key}.png'),
+      );
       await tester.pumpWidget(const SizedBox.shrink());
       controller.dispose();
     });
