@@ -10,7 +10,17 @@ https://platexample.ir/#/discover/chile
 
 # chile_plate
 
-Chile's licence plates for [`plate_core`](https://pub.dev/packages/plate_core) — the black-on-white private plate (`BB·BB·10`) and the orange provisional plate (`PR★065`), a theme for each, the 18-letter alphabet and an advisory validator.
+Chile's licence plates for the `plate_core` library: the private, taxi, bus, free-zone, trailer, diplomatic, police and provisional plates, each in its own colours, with an advisory validator.
+
+## Install
+
+```yaml
+dependencies:
+  plate_core: ^0.12.0
+  chile_plate: ^0.1.0
+```
+
+## Use
 
 ```dart
 import 'package:plate_core/plate_core.dart';
@@ -21,40 +31,39 @@ PlateCanvas(
   theme: ChileThemes.private,
   validator: const ChileValidator(),
   autoValidate: true,
+  onChooseCharacter: noCharacterChooser,
 );
 ```
 
-## Also available
+## Contains
 
-- [`plate_core`](https://pub.dev/packages/plate-core) - Paint license plates.
-- [`plate_alphabet`](https://pub.dev/packages/plate-alphabet) - A library of alphabets for license plates.
-- [`plate_keypad`](https://pub.dev/packages/plate-keypad) - A character picker for license plates.
-- [`plate_number_holder`](https://pub.dev/packages/plate-number-holder) - A frame to hold license plate numbers.
-- [`algeria_plate`](https://pub.dev/packages/algeria-plate) - Algeria's licence plates.
-- [`bolivia_plate`](https://pub.dev/packages/bolivia-plate) - Bolivia's licence plates.
-- [`brunei_plate`](https://pub.dev/packages/brunei-plate) - Brunei's licence plates.
-- [`chile_plate`](https://pub.dev/packages/chile-plate) - Chile's licence plates.
-- [`colombia_plate`](https://pub.dev/packages/colombia-plate) - Colombia's licence plates.
-- [`cuba_plate`](https://pub.dev/packages/cuba-plate) - Cuba's licence plates.
-- [`germany_plate`](https://pub.dev/packages/germany-plate) - Germany's licence plates.
-- [`india_plate`](https://pub.dev/packages/india-plate) - India's licence plates.
-- [`indonesia_plate`](https://pub.dev/packages/indonesia-plate) - Indonesia's licence plates.
-- [`iran_plate`](https://pub.dev/packages/iran-plate) - Iran's licence plates.
-- [`iranshahr_plate`](https://pub.dev/packages/iranshahr-plate) - Iranshahr region's licence plates.
-- [`italy_plate`](https://pub.dev/packages/italy-plate) - Italy's licence plates.
-- [`kyrgyzstan_plate`](https://pub.dev/packages/kyrgyzstan-plate) - Kyrgyzstan's licence plates.
-- [`laos_plate`](https://pub.dev/packages/laos-plate) - Laos's licence plates.
-- [`lebanon_plate`](https://pub.dev/packages/lebanon-plate) - Lebanon's licence plates.
-- [`malaysia_plate`](https://pub.dev/packages/malaysia-plate) - Malaysia's licence plates.
-- [`mali_plate`](https://pub.dev/packages/mali-plate) - Mali's licence plates.
-- [`niger_plate`](https://pub.dev/packages/niger-plate) - Niger's licence plates.
-- [`palestine_plate`](https://pub.dev/packages/palestine-plate) - Palestine's licence plates.
-- [`republic_of_ireland_plate`](https://pub.dev/packages/republic-of-ireland-plate) - Republic of Ireland's licence plates.
-- [`slovenia_plate`](https://pub.dev/packages/slovenia-plate) - Slovenia's licence plates.
-- [`spain_plate`](https://pub.dev/packages/spain-plate) - Spain's licence plates.
-- [`sudan_plate`](https://pub.dev/packages/sudan-plate) - Sudan's licence plates.
-- [`tunisia_plate`](https://pub.dev/packages/tunisia-plate) - Tunisia's licence plates.
-- [`venezuela_plate`](https://pub.dev/packages/venezuela-plate) - Venezuela's licence plates.
-- [`vietnam_plate`](https://pub.dev/packages/vietnam-plate) - Vietnam's licence plates.
-- [`yemen_plate`](https://pub.dev/packages/yemen-plate) - Yemen's licence plates.
-- [`zimbabwe_plate`](https://pub.dev/packages/zimbabwe-plate) - Zimbabwe's licence plates.
+- `ChileCountry` — country panel: `chile`.
+- `EasterIslandCountry` — country panel: `easter_island`.
+- `ChilePlates` — 8 plate specs: `private`, `bus`, `trailer`, `lightTrailer`, `diplomatic`, `police`, `provisional`, `lightTrailerFor()`.
+- `EasterIslandPlates` — 2 plate specs: `easterIsland`, `juanFernandez`.
+- `ChileThemes` — 11 themes: `private`, `taxi`, `collectiveTaxi`, `radiotaxi`, `bus`, `freeZone`, `trailer`, `lightTrailer`, `diplomatic`, `police` and 1 more.
+- `EasterIslandThemes` — 2 themes: `easterIsland`, `juanFernandez`.
+- `ChileValidator` — advisory validator; flags the frame, never blocks a keystroke.
+- `EasterIslandValidator` — advisory validator; flags the frame, never blocks a keystroke.
+- `ChileMissions` — code table.
+
+## Plates
+
+The Chilean plates. `private` is `BB·BB▪10` (groups `first`, `second`,
+`number`); the taxi, radiotaxi, free-zone and bus plates are the same
+layout in other colours, so they reuse its spec's cells. `trailer` is
+`JD▪20·67`; `lightTrailer` `BKF $ 125`; `diplomatic` `CD ★ 2401` (groups
+`first`, `mission`, `number`); `police` `RP ★ 2560`; `provisional`
+`PR ★ 065`. Colour is a theme: see `ChileThemes`.
+
+The two Easter Island provincial plates, `ABC 123`. They share one design;
+the caption and the optional district number are parameters, colour lives
+on `EasterIslandThemes`. Groups: `letters`, `number`.
+
+Provincial captions were dropped in 1984; these are the older plates the
+article pictures.
+
+## Part of plate
+
+Painted by [`plate_core`](https://pub.dev/packages/plate_core); alphabets shared through [`plate_alphabet`](https://pub.dev/packages/plate_alphabet); optional character picker in [`plate_keypad`](https://pub.dev/packages/plate_keypad).
+

@@ -186,10 +186,6 @@ abstract final class _Layout {
 abstract final class ChilePlates {
   static final PlateSpec private = _spec(_Layout.twoPair);
 
-  static final PlateSpec taxi = _spec(_Layout.twoPair, id: 'cl.taxi');
-  static final PlateSpec collectiveTaxi = _spec(_Layout.twoPair, id: 'cl.taxi.collective');
-  static final PlateSpec radiotaxi = _spec(_Layout.twoPair, id: 'cl.taxi.radio');
-  static final PlateSpec freeZone = _spec(_Layout.twoPair, id: 'cl.freezone');
   static final PlateSpec bus = _spec(_Layout.bus);
   static final PlateSpec trailer = _spec(_Layout.trailer);
   static final PlateSpec lightTrailer = lightTrailerFor('ANTOFAGASTA');
@@ -201,10 +197,6 @@ abstract final class ChilePlates {
 
   static List<PlateSpec> get all => <PlateSpec>[
     private,
-    taxi,
-    collectiveTaxi,
-    radiotaxi,
-    freeZone,
     bus,
     trailer,
     lightTrailer,
@@ -213,7 +205,7 @@ abstract final class ChilePlates {
     provisional,
   ];
 
-  static PlateSpec _spec(_Design d, {String? id}) {
+  static PlateSpec _spec(_Design d) {
     final List<PlateSlot> slots = <PlateSlot>[];
     final List<PlateTextGroup> groups = <PlateTextGroup>[];
     for (final _Run r in d.runs) {
@@ -228,7 +220,7 @@ abstract final class ChilePlates {
       );
     }
     return PlateSpec(
-      id: id ?? d.id,
+      id: d.id,
       country: ChileCountry.chile,
       canvasWidth: _Layout.width,
       canvasHeight: _Layout.height,

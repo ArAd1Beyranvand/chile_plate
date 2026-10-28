@@ -27,10 +27,10 @@ void main() {
   final Map<String, (PlateSpec, PlateTheme, String)> cases =
       <String, (PlateSpec, PlateTheme, String)>{
         'private': (ChilePlates.private, ChileThemes.private, 'BB BB 10'),
-        'taxi': (ChilePlates.taxi, ChileThemes.taxi, 'BP CW 17'),
-        'collective_taxi': (ChilePlates.collectiveTaxi, ChileThemes.collectiveTaxi, 'CD JL 70'),
-        'radiotaxi': (ChilePlates.radiotaxi, ChileThemes.radiotaxi, 'CT YS 61'),
-        'free_zone': (ChilePlates.freeZone, ChileThemes.freeZone, 'DZ GF 45'),
+        'taxi': (ChilePlates.private, ChileThemes.taxi, 'BP CW 17'),
+        'collective_taxi': (ChilePlates.private, ChileThemes.collectiveTaxi, 'CD JL 70'),
+        'radiotaxi': (ChilePlates.private, ChileThemes.radiotaxi, 'CT YS 61'),
+        'free_zone': (ChilePlates.private, ChileThemes.freeZone, 'DZ GF 45'),
         'bus': (ChilePlates.bus, ChileThemes.bus, 'DH RJ 52'),
         'trailer': (ChilePlates.trailer, ChileThemes.trailer, 'JD 20 67'),
         'light_trailer': (ChilePlates.lightTrailer, ChileThemes.lightTrailer, 'BKF 125'),
