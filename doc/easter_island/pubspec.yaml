@@ -1,5 +1,5 @@
 name: easter_island_plate
-description: "Easter Island's licence plates for the plate_core library — TODO one sentence: categories, colours, themes, alphabets, advisory validator."
+description: "Easter Island's licence plates for the plate_core library — categories, colours, themes, alphabets and an advisory validator."
 version: 0.1.0
 publish_to: none
 resolution: workspace
