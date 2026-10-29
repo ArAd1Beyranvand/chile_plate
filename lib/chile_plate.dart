@@ -3,6 +3,9 @@
 /// own colours, with an advisory validator.
 library;
 
+// TODO(py): [D5] one module `plates.countries.chile`; assets via importlib.resources.
+// TODO(ts): [D5] one subpath export `./countries/chile`; tree-shakable.
+// TODO(kt): [D5] package `countries.chile` in the countries module.
 export 'src/chile_colors.dart';
 export 'src/chile_country.dart';
 export 'src/chile_missions.dart';
