@@ -2,9 +2,6 @@ import 'package:plate_core/plate_core.dart';
 
 import 'chile_missions.dart';
 
-// TODO(py): [D4-code] hand-port; reason strings are the contract, keep them byte-identical.
-// TODO(ts): [D4-code] hand-port; reason strings are the contract, keep them byte-identical.
-// TODO(kt): [D4-code] hand-port; reason strings are the contract, keep them byte-identical.
 /// Judges a Chilean plate by which groups it has:
 ///
 /// - `first`, `second`, `number`: four consonants and two digits (`BB·BB·10`),
@@ -18,10 +15,7 @@ import 'chile_missions.dart';
 /// The letters of the 2007 format leave out the vowels, M, N, Ñ and Q.
 /// Reports, never bars a keystroke.
 class ChileValidator extends GatedPlateValidator {
-  const ChileValidator();
-
-  @override
-  String get gateGroup => 'number';
+  const ChileValidator() : super('number');
 
   static const String reasonLetters =
       'The letters are consonants (no M, N, Ñ or Q).';
@@ -37,9 +31,6 @@ class ChileValidator extends GatedPlateValidator {
   static const String reasonPolice =
       'A police plate is letters and four digits.';
 
-  // TODO(py): [H9] Python re: \d/\w match Unicode; keep explicit [0-9]/[A-Z] classes (or re.ASCII).
-  // TODO(ts): [H9] same flavour as Dart; port as is, cover accept/reject in the vectors (D9).
-  // TODO(kt): [H9] Regex engine differs per target (JVM/JS/Native): keep to portable syntax.
   static final RegExp _consonants = RegExp(r'^[BCDFGHJKLPRSTVWXYZ]+$');
   static final RegExp _letters = RegExp(r'^[A-Z]+$');
   static final RegExp _digits = RegExp(r'^[0-9]+$');
@@ -49,8 +40,7 @@ class ChileValidator extends GatedPlateValidator {
 
   @override
   PlateValidation judge(PlateEntry entry) {
-    final String first = entry.group('first');
-    final String second = entry.group('second');
+    final String first = entry.group('first'), second = entry.group('second');
     final String mission = entry.group('mission');
     final String number = entry.group('number');
 

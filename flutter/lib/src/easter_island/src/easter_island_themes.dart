@@ -19,7 +19,6 @@ abstract final class EasterIslandThemes {
 PlateTheme _framed(Color field, Color ink) => PlateTheme.monochrome(
   field: field,
   ink: ink,
-  inactive: EasterIslandColors.inactive,
   borderWidthRatio: 0.02,
   plateRadiusRatio: 0.05,
 );

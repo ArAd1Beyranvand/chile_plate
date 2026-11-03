@@ -6,7 +6,7 @@ GO VEGAN 🌱
 
 From the mighty people of Iran to the proud people of Easter Island to view examples:
 
-https://platexample.ir/#/discover/easterisland
+https://platexample.ir/#/discover/easterisland:flutter
 
 # easter_island_plate
 

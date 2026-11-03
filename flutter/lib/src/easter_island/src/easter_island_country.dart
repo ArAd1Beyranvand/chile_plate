@@ -7,7 +7,6 @@ import 'easter_island_colors.dart';
 abstract final class EasterIslandCountry {
   static const PlateCountry easter_island = PlateCountry(
     code: 'ea',
-    captionLines: <String>[],
     panelColor: EasterIslandColors.grey,
     panelTextColor: EasterIslandColors.red,
   );

@@ -8,5 +8,4 @@ abstract final class EasterIslandColors {
   static const Color red = Color(0xFFC70000);
   static const Color orange = Color(0xFFFF9F51);
   static const Color blue = Color(0xFF0057D0);
-  static const Color inactive = Color(0xFFB0B0B0);
 }

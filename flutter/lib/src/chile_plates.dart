@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/widgets.dart' show EdgeInsets;
 import 'package:plate_alphabet/plate_alphabet.dart';
 import 'package:plate_core/plate_core.dart';
@@ -94,9 +92,7 @@ class _Design {
 /// diplomatic series carries the Israel mission code 39 as a
 /// [PlateRestriction], so it cannot be stored.
 abstract final class _Layout {
-  static const double width = 360;
-  static const double height = 130;
-  static const double rowHeight = 96;
+  static const double width = 360, height = 130, rowHeight = 96;
 
   static const _Mark chile = _Mark('C H I L E', 178.5, 109.1, 140, 31);
 
@@ -242,20 +238,16 @@ abstract final class ChilePlates {
 
   static PlateSpec _spec(_Design d) {
     final List<PlateSlot> slots = <PlateSlot>[];
-    final List<PlateTextGroup> groups = <PlateTextGroup>[];
     for (final _Run r in d.runs) {
-      groups.add(PlateTextGroup(<int>[slots.length], key: r.key));
       slots.add(
-        PlateSlot(
-          alphabet: r.alphabet,
-          box: PlateBox(
-            r.cx - r.count * r.pitch / 2,
-            d.rowTop,
-            r.count * r.pitch,
-            d.rowHeight,
-          ),
-          length: r.count,
-          spacing: max(0, r.pitch - 0.6 * 0.72 * d.rowHeight),
+        plateRun(
+          r.alphabet,
+          r.count,
+          centre: r.cx,
+          top: d.rowTop,
+          pitch: r.pitch,
+          height: d.rowHeight,
+          group: r.key,
         ),
       );
     }
@@ -270,14 +262,7 @@ abstract final class ChilePlates {
       ),
       rules: <PlateRule>[
         for (final _Sep s in d.seps)
-          PlateRule(
-            box: PlateBox(
-              s.cx - s.width / 2,
-              s.cy - s.height / 2,
-              s.width,
-              s.height,
-            ),
-          ),
+          PlateRule(box: PlateBox.centered(s.cx, s.cy, s.width, s.height)),
       ],
       slots: slots,
       labels: <PlateLabel>[
@@ -288,7 +273,6 @@ abstract final class ChilePlates {
             glyphHeight: m.glyph,
           ),
       ],
-      textGroups: groups,
       restrictions: d.restrictions,
     );
   }

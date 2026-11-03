@@ -14,5 +14,4 @@ abstract final class ChileColors {
   static const Color blue = Color(0xFF5FBBDA);
   static const Color green = Color(0xFF137F25);
   static const Color trailerRed = Color(0xFFCD1C1C);
-  static const Color inactive = Color(0xFFB0B0B0);
 }

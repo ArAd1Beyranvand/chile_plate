@@ -22,17 +22,12 @@ import 'easter_island_country.dart';
 /// box. A 160-unit row gives ink ~85 (about 70% of the reference), at the
 /// width the three-character box allows.
 abstract final class _Layout {
-  static const double width = 520;
-  static const double height = 259;
-  static const double rowTop = 74.5;
-  static const double rowHeight = 160;
+  static const double width = 520, height = 259, rowTop = 74.5, rowHeight = 160;
 
   static const PlateBox letters = PlateBox(29.8, rowTop, 204, rowHeight);
   static const PlateBox digits = PlateBox(302, rowTop, 197, rowHeight);
 
-  static const double captionCy = 33.6;
-  static const double captionGlyph = 44;
-  static const double mark = 80;
+  static const double captionCy = 33.6, captionGlyph = 44, mark = 80;
 }
 
 /// The two Easter Island provincial plates, `ABC 123`. They share one design;
@@ -75,11 +70,13 @@ abstract final class EasterIslandPlates {
           alphabet: EasterIslandAlphabets.letters,
           box: _Layout.letters,
           length: 3,
+          group: 'letters',
         ),
         PlateSlot(
           alphabet: EasterIslandAlphabets.digits,
           box: _Layout.digits,
           length: 3,
+          group: 'number',
         ),
       ],
       labels: <PlateLabel>[
@@ -99,10 +96,6 @@ abstract final class EasterIslandPlates {
           box: PlateBox(243, 126, 60, 60),
           glyphHeight: _Layout.mark,
         ),
-      ],
-      textGroups: const <PlateTextGroup>[
-        PlateTextGroup(<int>[0], key: 'letters'),
-        PlateTextGroup(<int>[1], key: 'number'),
       ],
     );
   }

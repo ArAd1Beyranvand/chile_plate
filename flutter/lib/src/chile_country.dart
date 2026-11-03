@@ -7,7 +7,6 @@ import 'chile_colors.dart';
 abstract final class ChileCountry {
   static const PlateCountry chile = PlateCountry(
     code: 'cl',
-    captionLines: <String>[],
     panelColor: ChileColors.white,
     panelTextColor: ChileColors.black,
   );

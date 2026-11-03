@@ -6,13 +6,24 @@ GO VEGAN 🌱
 
 From the mighty people of Iran to the resilient people of Chile to view examples:
 
-https://platexample.ir/#/discover/chile
+https://platexample.ir/#/discover/chile:flutter
 
 # chile_plate
 
-Chile's licence plates for the `plate_core` library: the private, taxi, bus, free-zone, trailer, diplomatic, police and provisional plates, each in its own colours, with an advisory validator.
+Chile's licence plates for the plate_core library — the black-on-white private plate and the orange provisional plate, with themes, alphabets and an advisory validator.
 
-## Install
+## Languages
+
+| Language | Folder | Example |
+| --- | --- | --- |
+| Flutter / Dart | [`flutter/`](https://github.com/ArAd1Beyranvand/chile_plate/tree/main/flutter) | [platexample](https://platexample.ir/#/discover/chile:flutter) |
+| Kotlin | [`kotlin/`](https://github.com/ArAd1Beyranvand/chile_plate/tree/main/kotlin) | [platexample](https://platexample.ir/#/discover/chile:kotlin) |
+| Python | [`python/`](https://github.com/ArAd1Beyranvand/chile_plate/tree/main/python) | [platexample](https://platexample.ir/#/discover/chile:python) |
+| TypeScript | [`typescript/`](https://github.com/ArAd1Beyranvand/chile_plate/tree/main/typescript) | [platexample](https://platexample.ir/#/discover/chile:typescript) |
+
+## Quick start
+
+### Install
 
 ```yaml
 dependencies:
@@ -20,7 +31,7 @@ dependencies:
   chile_plate: ^0.1.0
 ```
 
-## Use
+### Use
 
 ```dart
 import 'package:plate_core/plate_core.dart';
@@ -35,16 +46,41 @@ PlateCanvas(
 );
 ```
 
-## Contains
+## Specs
 
-- `ChileCountry` — country panel: `chile`.
-- `EasterIslandCountry` — country panel: `easter_island`.
-- `ChilePlates` — 8 plate specs: `private`, `bus`, `trailer`, `lightTrailer`, `diplomatic`, `police`, `provisional`, `lightTrailerFor()`.
-- `EasterIslandPlates` — 2 plate specs: `easterIsland`, `juanFernandez`.
-- `ChileThemes` — 11 themes: `private`, `taxi`, `collectiveTaxi`, `radiotaxi`, `bus`, `freeZone`, `trailer`, `lightTrailer`, `diplomatic`, `police` and 1 more.
-- `EasterIslandThemes` — 2 themes: `easterIsland`, `juanFernandez`.
-- `ChileValidator` — advisory validator; flags the frame, never blocks a keystroke.
-- `EasterIslandValidator` — advisory validator; flags the frame, never blocks a keystroke.
+Each spec is one plate layout.
+
+- `ChilePlates.private`
+- `ChilePlates.bus`
+- `ChilePlates.trailer`
+- `ChilePlates.lightTrailer`
+- `ChilePlates.diplomatic`
+- `ChilePlates.police`
+- `ChilePlates.provisional`
+- `ChilePlates.lightTrailerFor`(…)
+
+## Themes
+
+- `ChileThemes.private`
+- `ChileThemes.taxi`
+- `ChileThemes.collectiveTaxi`
+- `ChileThemes.radiotaxi`
+- `ChileThemes.bus`
+- `ChileThemes.freeZone`
+- `ChileThemes.trailer`
+- `ChileThemes.lightTrailer`
+- `ChileThemes.diplomatic`
+- `ChileThemes.police`
+- `ChileThemes.provisional`
+
+## Change it
+
+`PlateCanvas` takes `spec:` (an entry of `ChilePlates`) and `theme:` (an entry of `ChileThemes`). Set `validator:` to `ChileValidator()` and `autoValidate: true` to show validation hints.
+
+## Also included
+
+- `ChileCountry` — the country panel.
+- `ChileValidator` — the plate validator.
 - `ChileMissions` — code table.
 
 ## Plates
@@ -67,3 +103,6 @@ article pictures.
 
 Painted by [`plate_core`](https://pub.dev/packages/plate_core); alphabets shared through [`plate_alphabet`](https://pub.dev/packages/plate_alphabet); optional character picker in [`plate_keypad`](https://pub.dev/packages/plate_keypad).
 
+## License
+
+See [LICENSE](https://github.com/ArAd1Beyranvand/chile_plate/blob/main/LICENSE).

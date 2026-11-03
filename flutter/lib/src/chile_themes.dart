@@ -48,7 +48,6 @@ abstract final class ChileThemes {
 PlateTheme _framed(Color field, Color ink) => PlateTheme.monochrome(
   field: field,
   ink: ink,
-  inactive: ChileColors.inactive,
   borderWidthRatio: 0.03,
   plateRadiusRatio: 0.06,
 );
