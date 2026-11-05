@@ -1,4 +1,4 @@
-import { PlateCheck, RuledPlateValidator } from '../../core/validators/plate_validator';
+import { PlateCheck, RuledPlateValidator } from 'plate_core/core/validators/plate_validator';
 
 /** Judges an `ABC 123` plate: groups `letters` (three Latin capitals) and
  * `number` (three digits). Reports, never bars a keystroke. */
